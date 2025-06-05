@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #cont2{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 30px 30px;
+      gap: 30px;
+      
+    }
+     .container {
+      background: #fff;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      
+    }
+
+    .container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .container h1 {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .container p {
+      font-size: 14px;
+      color: #333;
+    }
+    button{
+       background: linear-gradient(135deg, #6e7e9d, #8d9dbd);
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Button hover effects */
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Active button effect */
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+  </style>
+</head>
+<body>
+  <button id="btn1">Add Cart</button>
+  <button id="btn2">Remove Cart</button>
+  <div id="cont2"></div>
+
+
+  <script>
+    let btn1= document.querySelector("#btn1");
+    let btn2= document.querySelector("#btn2");
+    let cont= document.querySelector("#cont2");
+    let body= document.querySelector("body")
+
+    btn1.addEventListener("click", ()=>{
+  
+      let card = document.createElement('div');
+        card.className = 'container';
+
+         card.innerHTML =`
+          <img src="https://www.iamabiker.com/wp-content/uploads/2024/05/Pulsar-NS400Z-HD-wallpapers-3.jpg" />
+          <h1>Img 1</h1>
+          <p>string that specifies the type of element to be created. Don't use qualified names (like "html:a") with this method. When called on an HTML document</p>
+        `;
+
+       
+      cont.appendChild(card);
+
+      btn2.addEventListener("click",()=>{
+        card.remove();
+      })
+
+
+    })
+  </script>
+</body>
+</html>
